@@ -2,6 +2,7 @@ from fastapi import APIRouter, BackgroundTasks, HTTPException
 
 from customer_support_agent.models.schemas import TicketIn, TicketOut
 from customer_support_agent.repositories import customer_repo, ticket_repo
+from customer_support_agent.services.draft_service import generate_draft_for_ticket
 
 router = APIRouter(prefix="/tickets", tags=["tickets"])
 
