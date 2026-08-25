@@ -25,11 +25,12 @@ def create_app() -> FastAPI:
     )
 
     from customer_support_agent.api.routers import (
-        drafts, health, knowledge, tickets,
+        drafts, health, knowledge, memory, tickets,
     )
 
     app.include_router(health.router)
     app.include_router(tickets.router)
     app.include_router(drafts.router)
     app.include_router(knowledge.router)
+    app.include_router(memory.router)
     return app
